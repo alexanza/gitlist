@@ -74,6 +74,8 @@ class Application extends SilexApplication
             $twig->addFunction(new \Twig_SimpleFunction('avatar', array($app, 'getAvatar')));
             $twig->addGlobal('theme', $app['theme']);
             $twig->addGlobal('title', $config->get('app', 'title') ? $config->get('app', 'title') : 'GitList');
+            $twig->addGlobal('read_only', $config->get('app', 'read_only'));
+
             $twig->addGlobal('show_http_remote', $config->get('clone_button', 'show_http_remote'));
             $twig->addGlobal('use_https', $config->get('clone_button', 'use_https'));
             $twig->addGlobal('http_url_subdir', $config->get('clone_button', 'http_url_subdir'));
